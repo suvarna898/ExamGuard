@@ -1,0 +1,173 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Full page */
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 80px;
+
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+}
+
+
+/* Registration container */
+.register-container {
+    width: 360px;
+    max-width: 90%;
+
+    margin-top: 80px;
+
+    padding: 30px;
+
+    background: transparent;
+}
+
+
+/* Heading */
+.register-container h1 {
+    text-align: center;
+
+    color: #000000;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    /* Space between heading and Username */
+    margin-bottom: 40px;
+
+    white-space: nowrap;
+}
+
+
+/* Form group */
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+/* Username, Email and Password labels */
+label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #ffffff;
+}
+
+
+/* Input fields */
+input {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 2px solid #c4b5fd;
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    background-color: #ffffff;
+
+    color: #333;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Placeholder color */
+input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* Input hover */
+input:hover {
+    border-color: #a78bfa;
+}
+
+
+/* Input focus */
+input:focus {
+    outline: none;
+
+    border-color: #7c3aed;
+
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.35);
+
+    transform: scale(1.02);
+}
+
+
+/* Register button */
+.register-btn {
+    width: 100%;
+
+    padding: 11px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #667eea, #764ba2);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Register button hover */
+.register-btn:hover {
+    transform: translateY(-3px);
+
+    background: linear-gradient(90deg, #764ba2, #f093fb);
+
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.4);
+}
+
+
+/* Register button click */
+.register-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+
+    body {
+        padding-top: 40px;
+    }
+
+    .register-container {
+        width: 90%;
+        margin-top: 40px;
+        padding: 25px;
+    }
+
+    .register-container h1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+        white-space: normal;
+    }
+}
