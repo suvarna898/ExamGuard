@@ -5,6 +5,7 @@ DB="database/examguard.db"
 
 def get_db():
     connection = sqlite3.connect(DB)
+    connection.row_factory = sqlite3.Row
     return connection
 
 

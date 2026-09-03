@@ -1,24 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Guard Registration</title>
+
+    <title>ExamGuard | Candidate Registration</title>
+
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <h1>Register for Exam Guard</h1>
-    <form action="/register" method="post">
-        <label for="name">Username:</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Register">
-        
-        
-    
+
+    <div class="page-container">
+
+        <div class="register-card">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">E</div>
+
+                <span>
+                    Exam<span class="orange-text">Guard</span>
+                </span>
+            </div>
+
+
+            <!-- Heading -->
+            <div class="heading">
+                <h1>Create Account</h1>
+
+                <p>
+                    Register to start your ExamGuard journey
+                </p>
+            </div>
+
+
+            <!-- Registration Form -->
+            <form action="/register" method="POST">
+
+
+                <!-- Username -->
+                <div class="form-group">
+
+                    <label for="name">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Terms -->
+                <div class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <label for="terms">
+                        I agree to the Terms and Conditions
+                    </label>
+
+                </div>
+
+
+                <!-- Register Button -->
+                <button
+                    type="submit"
+                    class="login-button register-button"
+                >
+                    Create Account
+                </button>
+
+
+            </form>
+
+
+            <!-- Login Link -->
+            <div class="register-section">
+
+                <p>
+                    Already have an account?
+                </p>
+
+                <a href="/login">
+                    Login here
+                </a>
+
+            </div>
+
+
+            <!-- Security Message -->
+            <div class="security-message">
+
+                🔒 Your information is secure and protected
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
+
 </html>
