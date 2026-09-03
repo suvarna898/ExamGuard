@@ -1,42 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>ExamGuard Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ExamGuard | Candidate Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <h1>Candidate Login</h1>
+    <div class="page-container">
 
-    <form method="POST">
+        <div class="login-card">
 
-        <label>Email:</label>
+            <div class="logo">
+                <div class="logo-icon">E</div>
+                <span>Exam<span class="orange-text">Guard</span></span>
+            </div>
 
-        <input
-            type="email"
-            name="email"
-            required
-        >
+            <div class="heading">
+                <h1>Welcome Back</h1>
+                <p>Login to continue to your exam</p>
+            </div>
 
-        <br><br>
+            <form method="POST">
 
-        <label>Password:</label>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
 
-        <input
-            type="password"
-            name="password"
-            required
-        >
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
 
-        <br><br>
+                <div class="form-group">
+                    <label for="password">Password</label>
 
-        <button type="submit">
-            Login
-        </button>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
 
-    </form>
+                
+
+                <button type="submit" class="login-button">
+                    Login
+                </button>
+
+            </form>
+
+            <div class="register-section">
+                <p>Don't have an account?</p>
+                <a href="/register">Create an account</a>
+            </div>
+
+            <div class="security-message">
+                🔒 Your login information is secure
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 
-</html>
+</html>  login.html
