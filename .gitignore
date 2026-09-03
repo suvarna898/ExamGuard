@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+database/examguard.db
+static/uploads/
