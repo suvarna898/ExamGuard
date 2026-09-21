@@ -12,161 +12,264 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
+            font-family: Arial, Helvetica, sans-serif;
             min-height: 100vh;
-            background: linear-gradient(135deg, #eef2ff, #f8fafc);
-            color: #1e293b;
+            background:
+                radial-gradient(circle at top left, #4f46e5, transparent 35%),
+                radial-gradient(circle at bottom right, #7c3aed, transparent 35%),
+                linear-gradient(135deg, #111827, #312e81);
+            color: #ffffff;
         }
 
-        /* Navbar */
+        /* NAVBAR */
+
         .navbar {
-            height: 70px;
-            background: #ffffff;
+            height: 72px;
+            padding: 0 55px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 50px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+            background: rgba(255, 255, 255, 0.10);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(15px);
         }
 
         .logo {
             font-size: 25px;
-            font-weight: bold;
-            color: #4f46e5;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: #c4b5fd;
         }
 
         .logout-btn {
             text-decoration: none;
-            color: #ffffff;
-            background: #ef4444;
+            color: white;
+
             padding: 10px 20px;
-            border-radius: 8px;
+
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+
+            background: rgba(255,255,255,0.10);
+
             font-size: 14px;
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .logout-btn:hover {
-            background: #dc2626;
-            transform: translateY(-1px);
+            background: rgba(255,255,255,0.20);
+            transform: translateY(-2px);
         }
 
-        /* Main content */
+        /* MAIN */
+
         .container {
-            max-width: 1100px;
-            margin: 50px auto;
+            max-width: 1050px;
+            margin: 55px auto;
             padding: 0 25px;
         }
 
-        .welcome-section {
-            margin-bottom: 35px;
+        .welcome {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .welcome-section h1 {
-            font-size: 34px;
-            margin-bottom: 10px;
-            color: #0f172a;
+        .welcome h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
         }
 
-        .welcome-section p {
-            font-size: 17px;
-            color: #64748b;
+        .welcome h1 span {
+            background: linear-gradient(
+                90deg,
+                #a78bfa,
+                #60a5fa
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Cards */
+        .welcome p {
+            color: #d1d5db;
+            font-size: 16px;
+        }
+
+        /* CARDS */
+
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 22px;
         }
 
         .card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 28px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.12);
+
+            border: 1px solid rgba(255,255,255,0.18);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.20);
+
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.16);
         }
 
         .icon {
-            width: 50px;
-            height: 50px;
-            background: #eef2ff;
-            color: #4f46e5;
-            border-radius: 12px;
+            width: 52px;
+            height: 52px;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+
+            border-radius: 15px;
+
+            background: linear-gradient(
+                135deg,
+                #6366f1,
+                #8b5cf6
+            );
+
+            font-size: 23px;
+
             margin-bottom: 20px;
         }
 
         .card h2 {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
-            color: #1e293b;
         }
 
         .card p {
-            color: #64748b;
+            color: #d1d5db;
+            font-size: 13px;
             line-height: 1.6;
-            font-size: 14px;
         }
 
-        /* Exam section */
+        /* EXAM CARD */
+
         .exam-box {
             margin-top: 30px;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(99,102,241,0.35),
+                    rgba(124,58,237,0.30)
+                );
+
+            border: 1px solid rgba(255,255,255,0.20);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.25);
         }
 
         .exam-box h2 {
+            font-size: 25px;
             margin-bottom: 10px;
-            color: #0f172a;
         }
 
         .exam-box p {
-            color: #64748b;
-            margin-bottom: 20px;
+            color: #d1d5db;
+            margin-bottom: 25px;
         }
+
+        .exam-info {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .info {
+            padding: 9px 15px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.12);
+
+            color: #e5e7eb;
+
+            font-size: 13px;
+        }
+
+        /* START BUTTON */
 
         .start-btn {
             display: inline-block;
+
+            padding: 14px 30px;
+
+            border-radius: 12px;
+
             text-decoration: none;
-            background: #4f46e5;
+
             color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
+
+            font-size: 15px;
             font-weight: bold;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6
+                );
+
+            box-shadow:
+                0 8px 20px rgba(99,102,241,0.45);
+
             transition: 0.3s;
         }
 
         .start-btn:hover {
-            background: #4338ca;
+            transform: translateY(-3px);
+            box-shadow:
+                0 12px 25px rgba(99,102,241,0.60);
         }
 
-        /* Responsive */
+        /* RESPONSIVE */
+
         @media (max-width: 800px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
 
             .navbar {
                 padding: 0 20px;
             }
 
-            .welcome-section h1 {
-                font-size: 28px;
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome h1 {
+                font-size: 30px;
             }
         }
     </style>
@@ -174,11 +277,12 @@
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- NAVBAR -->
+
     <nav class="navbar">
 
         <div class="logo">
-            ExamGuard
+            🛡 Exam<span>Guard</span>
         </div>
 
         <a href="/logout" class="logout-btn">
@@ -188,84 +292,127 @@
     </nav>
 
 
-    <!-- Main Dashboard -->
-    <div class="container">
+    <!-- MAIN -->
 
-        <div class="welcome-section">
+    <main class="container">
 
-            <h1>Candidate Dashboard</h1>
+        <section class="welcome">
 
-            <p>
-                Welcome to ExamGuard! Your secure online examination portal.
-            </p>
-
-        </div>
-
-
-        <!-- Dashboard Cards -->
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="icon">👤</div>
-
-                <h2>Candidate</h2>
-
-                <p>
-                    Your candidate profile and registration details are securely
-                    managed by ExamGuard.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">🛡️</div>
-
-                <h2>Secure Exam</h2>
-
-                <p>
-                    ExamGuard provides a secure environment for conducting
-                    online examinations.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="icon">✓</div>
-
-                <h2>Verified</h2>
-
-                <p>
-                    Your identity has been registered successfully and is ready
-                    for the examination process.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- Exam Section -->
-        <div class="exam-box">
-
-            <h2>Ready for your examination?</h2>
+            <h1>
+                Welcome to <span>ExamGuard</span>
+            </h1>
 
             <p>
-                Make sure your camera and system are ready before starting
-                the examination.
+                Your secure online examination portal
             </p>
 
-            <a href="#" class="start-btn">
-                Start Examination
+        </section>
+
+
+        <!-- CARDS -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <div class="icon">
+                    👤
+                </div>
+
+                <h2>
+                    Candidate
+                </h2>
+
+                <p>
+                    Your candidate profile and registration
+                    details are securely managed by ExamGuard.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🛡
+                </div>
+
+                <h2>
+                    Secure Exam
+                </h2>
+
+                <p>
+                    Your examination is protected using
+                    camera, face and browser monitoring.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Verified
+                </h2>
+
+                <p>
+                    Your identity has been registered
+                    successfully and is ready for examination.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXAM -->
+
+        <section class="exam-box">
+
+            <h2>
+                Ready for your examination?
+            </h2>
+
+            <p>
+                Make sure your camera and system are ready
+                before starting the examination.
+            </p>
+
+
+            <div class="exam-info">
+
+                <div class="info">
+                    📝 Python Assessment
+                </div>
+
+                <div class="info">
+                    📚 10 Questions
+                </div>
+
+                <div class="info">
+                    🛡 Secure Monitoring
+                </div>
+
+            </div>
+
+
+            <!-- IMPORTANT -->
+
+            <a
+                href="/start-exam"
+                class="start-btn">
+
+                Start Examination →
+                
             </a>
 
-        </div>
+        </section>
 
-    </div>
+    </main>
 
 </body>
 

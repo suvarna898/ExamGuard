@@ -1,0 +1,96 @@
+session_id,candidate_name,event_type,timestamp
+bfa2744e-aa02-44ce-b45d-c36d29ffb8d1,Jaime Warner,face_absent,2026-09-11 21:41:15
+bfa2744e-aa02-44ce-b45d-c36d29ffb8d1,Jaime Warner,tab_switched,2026-09-11 21:41:45
+bfa2744e-aa02-44ce-b45d-c36d29ffb8d1,Jaime Warner,face_absent,2026-09-11 21:42:15
+bfa2744e-aa02-44ce-b45d-c36d29ffb8d1,Jaime Warner,tab_switched,2026-09-11 21:42:45
+bfa2744e-aa02-44ce-b45d-c36d29ffb8d1,Jaime Warner,face_detected,2026-09-11 21:43:15
+9aef3007-e2f5-48e2-9bc4-060ca7be698e,Darren Cochran,question_answered,2026-09-11 21:41:15
+9aef3007-e2f5-48e2-9bc4-060ca7be698e,Darren Cochran,tab_switched,2026-09-11 21:41:45
+9aef3007-e2f5-48e2-9bc4-060ca7be698e,Darren Cochran,focus_loss,2026-09-11 21:42:15
+9aef3007-e2f5-48e2-9bc4-060ca7be698e,Darren Cochran,face_detected,2026-09-11 21:42:45
+9aef3007-e2f5-48e2-9bc4-060ca7be698e,Darren Cochran,face_detected,2026-09-11 21:43:15
+d300ddb7-c83b-49e1-9c22-5fe493d5eed7,Phillip Nelson,face_detected,2026-09-11 21:41:15
+d300ddb7-c83b-49e1-9c22-5fe493d5eed7,Phillip Nelson,face_absent,2026-09-11 21:41:45
+d300ddb7-c83b-49e1-9c22-5fe493d5eed7,Phillip Nelson,face_detected,2026-09-11 21:42:15
+d300ddb7-c83b-49e1-9c22-5fe493d5eed7,Phillip Nelson,face_absent,2026-09-11 21:42:45
+d300ddb7-c83b-49e1-9c22-5fe493d5eed7,Phillip Nelson,question_answered,2026-09-11 21:43:15
+22562ab1-3322-409d-ab88-b9f6b4be5675,Gina Garza,question_answered,2026-09-11 21:41:15
+22562ab1-3322-409d-ab88-b9f6b4be5675,Gina Garza,question_answered,2026-09-11 21:41:45
+22562ab1-3322-409d-ab88-b9f6b4be5675,Gina Garza,question_answered,2026-09-11 21:42:15
+22562ab1-3322-409d-ab88-b9f6b4be5675,Gina Garza,focus_loss,2026-09-11 21:42:45
+22562ab1-3322-409d-ab88-b9f6b4be5675,Gina Garza,face_detected,2026-09-11 21:43:15
+85bbe681-6c05-4c5a-9c85-0ccd87bc1758,Anna Mcdonald,face_absent,2026-09-11 21:41:15
+85bbe681-6c05-4c5a-9c85-0ccd87bc1758,Anna Mcdonald,question_answered,2026-09-11 21:41:45
+85bbe681-6c05-4c5a-9c85-0ccd87bc1758,Anna Mcdonald,focus_loss,2026-09-11 21:42:15
+85bbe681-6c05-4c5a-9c85-0ccd87bc1758,Anna Mcdonald,face_detected,2026-09-11 21:42:45
+85bbe681-6c05-4c5a-9c85-0ccd87bc1758,Anna Mcdonald,question_answered,2026-09-11 21:43:15
+62ab2372-43bf-4040-95b3-4a8bccc34798,Daryl Davenport,tab_switched,2026-09-11 21:41:15
+62ab2372-43bf-4040-95b3-4a8bccc34798,Daryl Davenport,face_absent,2026-09-11 21:41:45
+62ab2372-43bf-4040-95b3-4a8bccc34798,Daryl Davenport,focus_loss,2026-09-11 21:42:15
+62ab2372-43bf-4040-95b3-4a8bccc34798,Daryl Davenport,tab_switched,2026-09-11 21:42:45
+62ab2372-43bf-4040-95b3-4a8bccc34798,Daryl Davenport,face_absent,2026-09-11 21:43:15
+010048f5-6ed9-46c1-9a4e-2eb7bf780855,Cynthia Jimenez,face_absent,2026-09-11 21:41:15
+010048f5-6ed9-46c1-9a4e-2eb7bf780855,Cynthia Jimenez,face_absent,2026-09-11 21:41:45
+010048f5-6ed9-46c1-9a4e-2eb7bf780855,Cynthia Jimenez,focus_loss,2026-09-11 21:42:15
+010048f5-6ed9-46c1-9a4e-2eb7bf780855,Cynthia Jimenez,focus_loss,2026-09-11 21:42:45
+010048f5-6ed9-46c1-9a4e-2eb7bf780855,Cynthia Jimenez,face_detected,2026-09-11 21:43:15
+90dddaf0-5f44-44f6-a3a5-6d6c569d15d8,Kevin Hanson,tab_switched,2026-09-11 21:41:15
+90dddaf0-5f44-44f6-a3a5-6d6c569d15d8,Kevin Hanson,face_absent,2026-09-11 21:41:45
+90dddaf0-5f44-44f6-a3a5-6d6c569d15d8,Kevin Hanson,tab_switched,2026-09-11 21:42:15
+90dddaf0-5f44-44f6-a3a5-6d6c569d15d8,Kevin Hanson,focus_loss,2026-09-11 21:42:45
+90dddaf0-5f44-44f6-a3a5-6d6c569d15d8,Kevin Hanson,face_absent,2026-09-11 21:43:15
+b1a68c73-f118-4918-91b3-da46d14accb1,Elaine Long,tab_switched,2026-09-11 21:41:15
+b1a68c73-f118-4918-91b3-da46d14accb1,Elaine Long,question_answered,2026-09-11 21:41:45
+b1a68c73-f118-4918-91b3-da46d14accb1,Elaine Long,tab_switched,2026-09-11 21:42:15
+b1a68c73-f118-4918-91b3-da46d14accb1,Elaine Long,focus_loss,2026-09-11 21:42:45
+b1a68c73-f118-4918-91b3-da46d14accb1,Elaine Long,face_detected,2026-09-11 21:43:15
+fb0f1585-dbe0-4427-95f1-cb172848c452,Lisa Arellano,focus_loss,2026-09-11 21:41:15
+fb0f1585-dbe0-4427-95f1-cb172848c452,Lisa Arellano,tab_switched,2026-09-11 21:41:45
+fb0f1585-dbe0-4427-95f1-cb172848c452,Lisa Arellano,tab_switched,2026-09-11 21:42:15
+fb0f1585-dbe0-4427-95f1-cb172848c452,Lisa Arellano,face_detected,2026-09-11 21:42:45
+fb0f1585-dbe0-4427-95f1-cb172848c452,Lisa Arellano,question_answered,2026-09-11 21:43:15
+c9fc6d6b-023d-4ab7-a852-b9b9953bc5d6,suvarna,face_absent,2026-09-11 22:24:23
+c9fc6d6b-023d-4ab7-a852-b9b9953bc5d6,suvarna,face_detected,2026-09-11 22:24:42
+c9fc6d6b-023d-4ab7-a852-b9b9953bc5d6,suvarna,face_absent,2026-09-11 22:24:42
+c9fc6d6b-023d-4ab7-a852-b9b9953bc5d6,suvarna,face_detected,2026-09-11 22:24:44
+c9fc6d6b-023d-4ab7-a852-b9b9953bc5d6,suvarna,face_absent,2026-09-11 22:24:45
+c9fc6d6b-023d-4ab7-a852-b9b9953bc5d6,suvarna,face_detected,2026-09-11 22:24:45
+c9fc6d6b-023d-4ab7-a852-b9b9953bc5d6,suvarna,face_absent,2026-09-11 22:24:45
+browser-session,candidate,focus_loss,2026-09-11T17:19:08.329Z
+browser-session,candidate,tab_switched,2026-09-11T17:19:08.334Z
+browser-session,candidate,focus_loss,2026-09-11T17:19:26.114Z
+browser-session,candidate,question_answered,2026-09-11T17:19:27.450Z
+browser-session,candidate,question_answered,2026-09-11T17:19:29.069Z
+browser-session,candidate,tab_switched,2026-09-11T17:19:30.666Z
+browser-session,candidate,focus_loss,2026-09-11T17:19:51.633Z
+browser-session,candidate,focus_loss,2026-09-11T17:19:55.176Z
+browser-session,candidate,focus_loss,2026-09-11T17:19:59.598Z
+browser-session,candidate,question_answered,2026-09-11T17:20:04.217Z
+browser-session,candidate,focus_loss,2026-09-11T17:20:07.248Z
+browser-session,candidate,tab_switched,2026-09-11T17:20:07.251Z
+browser-session,candidate,focus_loss,2026-09-11T17:20:15.518Z
+browser-session,candidate,tab_switched,2026-09-11T17:20:15.519Z
+browser-session,candidate,focus_loss,2026-09-11T17:20:19.071Z
+browser-session,candidate,tab_switched,2026-09-11T17:20:19.114Z
+browser-session,candidate,focus_loss,2026-09-11T17:22:55.458Z
+browser-session,candidate,tab_switched,2026-09-11T17:22:55.462Z
+browser-session,candidate,focus_loss,2026-09-11T17:23:00.522Z
+browser-session,candidate,tab_switched,2026-09-11T17:23:00.779Z
+browser-session,candidate,focus_loss,2026-09-11T17:23:23.589Z
+browser-session,candidate,tab_switched,2026-09-11T17:23:23.591Z
+browser-session,candidate,focus_loss,2026-09-11T17:23:26.947Z
+browser-session,candidate,tab_switched,2026-09-11T17:23:26.966Z
+browser-session,candidate,focus_loss,2026-09-11T17:23:38.689Z
+browser-session,candidate,tab_switched,2026-09-11T17:23:44.607Z
+browser-session,candidate,focus_loss,2026-09-11T17:23:44.613Z
+browser-session,candidate,focus_loss,2026-09-11T17:24:57.383Z
+browser-session,candidate,focus_loss,2026-09-11T17:25:03.812Z
+browser-session,candidate,tab_switched,2026-09-11T17:25:03.830Z
+browser-session,candidate,focus_loss,2026-09-11T17:25:24.166Z
+browser-session,candidate,tab_switched,2026-09-11T17:25:24.189Z
+browser-session,candidate,focus_loss,2026-09-11T17:25:45.417Z
+browser-session,candidate,tab_switched,2026-09-11T17:25:45.421Z
+browser-session,candidate,focus_loss,2026-09-11T17:26:23.157Z
+browser-session,candidate,tab_switched,2026-09-11T17:26:23.178Z
+browser-session,candidate,tab_switched,2026-09-11T17:26:36.317Z
+browser-session,candidate,focus_loss,2026-09-11T17:26:36.321Z

@@ -2,151 +2,1120 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>ExamGuard | Candidate Registration</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #4f46e5 0%,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #7c3aed 0%,
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #111827,
+                    #312e81
+                );
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 35px 20px;
+
+        }
+
+
+        /* =========================================
+           MAIN CARD
+        ========================================= */
+
+        .register-card {
+
+            width: 100%;
+
+            max-width: 480px;
+
+            background:
+                rgba(255, 255, 255, 0.97);
+
+            border-radius: 24px;
+
+            padding: 34px 38px;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0, 0, 0, 0.30);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.5);
+
+        }
+
+
+        /* =========================================
+           LOGO
+        ========================================= */
+
+        .logo {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: #172554;
+
+            font-size: 23px;
+
+            font-weight: 800;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .logo-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            color: white;
+
+            font-size: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6
+                );
+
+            box-shadow:
+                0 7px 18px
+                rgba(99,102,241,0.35);
+
+        }
+
+
+        .logo .purple-text {
+
+            color: #6366f1;
+
+        }
+
+
+        /* =========================================
+           HEADING
+        ========================================= */
+
+        .heading {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .heading h1 {
+
+            color: #172033;
+
+            font-size: 26px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .heading p {
+
+            color: #64748b;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .form-group {
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            color: #334155;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+
+            width: 100%;
+
+            height: 44px;
+
+            padding: 0 13px;
+
+            border:
+                1px solid
+                #d8def0;
+
+            border-radius: 10px;
+
+            background: #f8fafc;
+
+            color: #172033;
+
+            font-size: 13px;
+
+            outline: none;
+
+            transition: 0.2s;
+
+        }
+
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+
+            border-color: #6366f1;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(99,102,241,0.12);
+
+        }
+
+
+        input::placeholder {
+
+            color: #94a3b8;
+
+        }
+
+
+        /* =========================================
+           CAMERA AREA
+        ========================================= */
+
+        .camera-section {
+
+            margin-top: 5px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .camera-label {
+
+            display: block;
+
+            color: #334155;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        #camera {
+
+            width: 100%;
+
+            max-height: 260px;
+
+            object-fit: cover;
+
+            border-radius: 14px;
+
+            background: #0f172a;
+
+            border:
+                1px solid
+                #dbe2ea;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        #preview {
+
+            width: 100%;
+
+            max-height: 260px;
+
+            object-fit: cover;
+
+            border-radius: 14px;
+
+            border:
+                2px solid
+                #6366f1;
+
+            margin-top: 12px;
+
+        }
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .action-button {
+
+            width: 100%;
+
+            height: 44px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6
+                );
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+            box-shadow:
+                0 6px 15px
+                rgba(99,102,241,0.28);
+
+        }
+
+
+        .action-button:hover:not(:disabled) {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 9px 20px
+                rgba(99,102,241,0.40);
+
+        }
+
+
+        .action-button:disabled {
+
+            background: #cbd5e1;
+
+            color: #64748b;
+
+            cursor: not-allowed;
+
+            box-shadow: none;
+
+        }
+
+
+        #capturePhoto {
+
+            margin-top: 10px;
+
+        }
+
+
+        /* =========================================
+           PHOTO STATUS
+        ========================================= */
+
+        #photoStatus {
+
+            min-height: 18px;
+
+            margin-top: 9px;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           TERMS
+        ========================================= */
+
+        .terms {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 8px;
+
+            margin: 16px 0;
+
+        }
+
+
+        .terms input {
+
+            margin-top: 2px;
+
+            accent-color: #6366f1;
+
+            cursor: pointer;
+
+        }
+
+
+        .terms label {
+
+            color: #64748b;
+
+            font-size: 11px;
+
+            line-height: 1.4;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================================
+           REGISTER BUTTON
+        ========================================= */
+
+        #registerButton {
+
+            margin-top: 5px;
+
+        }
+
+
+        /* =========================================
+           LOGIN LINK
+        ========================================= */
+
+        .register-section {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 5px;
+
+            padding-top: 20px;
+
+            margin-top: 20px;
+
+            border-top:
+                1px solid
+                #e2e8f0;
+
+            font-size: 12px;
+
+        }
+
+
+        .register-section p {
+
+            color: #64748b;
+
+        }
+
+
+        .register-section a {
+
+            color: #6366f1;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+        }
+
+
+        .register-section a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* =========================================
+           SECURITY MESSAGE
+        ========================================= */
+
+        .security-message {
+
+            margin-top: 16px;
+
+            padding: 11px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            background: #eef2ff;
+
+            color: #4f46e5;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 550px) {
+
+            body {
+
+                padding: 20px 12px;
+
+                align-items: flex-start;
+
+            }
+
+
+            .register-card {
+
+                margin-top: 20px;
+
+                padding: 28px 22px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .logo {
+
+                font-size: 21px;
+
+            }
+
+
+            .heading h1 {
+
+                font-size: 23px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <div class="page-container">
 
-        <div class="register-card">
-
-            <!-- Logo -->
-            <div class="logo">
-                <div class="logo-icon">E</div>
-
-                <span>
-                    Exam<span class="orange-text">Guard</span>
-                </span>
-            </div>
+<div class="register-card">
 
 
-            <!-- Heading -->
-            <div class="heading">
-                <h1>Create Account</h1>
+    <!-- =========================================
+         LOGO
+    ========================================= -->
 
-                <p>
-                    Register to start your ExamGuard journey
-                </p>
-            </div>
+    <div class="logo">
 
+        <div class="logo-icon">
 
-            <!-- Registration Form -->
-            <form action="/register" method="POST">
-
-
-                <!-- Username -->
-                <div class="form-group">
-
-                    <label for="name">
-                        Username
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your username"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Email -->
-                <div class="form-group">
-
-                    <label for="email">
-                        Email Address
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Password -->
-                <div class="form-group">
-
-                    <label for="password">
-                        Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Create a password"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Terms -->
-                <div class="terms">
-
-                    <input
-                        type="checkbox"
-                        id="terms"
-                        required
-                    >
-
-                    <label for="terms">
-                        I agree to the Terms and Conditions
-                    </label>
-
-                </div>
-
-
-                <!-- Register Button -->
-                <button
-                    type="submit"
-                    class="login-button register-button"
-                >
-                    Create Account
-                </button>
-
-
-            </form>
-
-
-            <!-- Login Link -->
-            <div class="register-section">
-
-                <p>
-                    Already have an account?
-                </p>
-
-                <a href="/login">
-                    Login here
-                </a>
-
-            </div>
-
-
-            <!-- Security Message -->
-            <div class="security-message">
-
-                🔒 Your information is secure and protected
-
-            </div>
+            🛡
 
         </div>
 
+
+        <span>
+
+            Exam<span class="purple-text">
+                Guard
+            </span>
+
+        </span>
+
     </div>
+
+
+
+    <!-- =========================================
+         HEADING
+    ========================================= -->
+
+    <div class="heading">
+
+        <h1>
+            Create Account
+        </h1>
+
+        <p>
+            Register to start your secure examination journey
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================================
+         REGISTRATION FORM
+    ========================================= -->
+
+    <form
+        action="/register"
+        method="POST"
+        enctype="multipart/form-data">
+
+
+        <!-- USERNAME -->
+
+        <div class="form-group">
+
+            <label for="name">
+                Username
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your username"
+                required
+            >
+
+        </div>
+
+
+
+        <!-- EMAIL -->
+
+        <div class="form-group">
+
+            <label for="email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+        </div>
+
+
+
+        <!-- PASSWORD -->
+
+        <div class="form-group">
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                required
+            >
+
+        </div>
+
+
+
+        <!-- =====================================
+             CAMERA
+        ====================================== -->
+
+        <div class="camera-section">
+
+            <label class="camera-label">
+                Candidate Photo
+            </label>
+
+
+            <video
+                id="camera"
+                autoplay
+                playsinline
+                style="display:none;">
+            </video>
+
+
+            <button
+                type="button"
+                id="startCamera"
+                class="action-button">
+
+                📷 Start Camera
+
+            </button>
+
+
+            <button
+                type="button"
+                id="capturePhoto"
+                class="action-button"
+                disabled>
+
+                📸 Capture Photo
+
+            </button>
+
+
+            <canvas
+                id="canvas"
+                style="display:none;">
+            </canvas>
+
+
+            <img
+                id="preview"
+                alt="Captured Photo"
+                style="display:none;">
+
+
+            <p id="photoStatus"></p>
+
+        </div>
+
+
+
+        <!-- =====================================
+             TERMS
+        ====================================== -->
+
+        <div class="terms">
+
+            <input
+                type="checkbox"
+                id="terms"
+                required
+            >
+
+            <label for="terms">
+
+                I agree to the Terms and Conditions
+
+            </label>
+
+        </div>
+
+
+
+        <!-- =====================================
+             CREATE ACCOUNT
+        ====================================== -->
+
+        <button
+            type="submit"
+            id="registerButton"
+            class="action-button"
+            disabled>
+
+            Create Account →
+
+        </button>
+
+
+    </form>
+
+
+
+    <!-- =========================================
+         LOGIN LINK
+    ========================================= -->
+
+    <div class="register-section">
+
+        <p>
+            Already have an account?
+        </p>
+
+        <a href="/login">
+            Login here
+        </a>
+
+    </div>
+
+
+
+    <!-- =========================================
+         SECURITY
+    ========================================= -->
+
+    <div class="security-message">
+
+        🔒 Your information is secure and protected
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =============================================
+     CAMERA JAVASCRIPT
+     LOGIC PRESERVED
+================================================ -->
+
+<script>
+
+
+const startCameraButton =
+    document.getElementById(
+        "startCamera"
+    );
+
+
+const capturePhotoButton =
+    document.getElementById(
+        "capturePhoto"
+    );
+
+
+const registerButton =
+    document.getElementById(
+        "registerButton"
+    );
+
+
+const camera =
+    document.getElementById(
+        "camera"
+    );
+
+
+const canvas =
+    document.getElementById(
+        "canvas"
+    );
+
+
+const photoStatus =
+    document.getElementById(
+        "photoStatus"
+    );
+
+
+const preview =
+    document.getElementById(
+        "preview"
+    );
+
+
+let cameraStream = null;
+
+
+
+/* =========================================
+   START CAMERA
+========================================= */
+
+startCameraButton.addEventListener(
+
+    "click",
+
+    async function () {
+
+        try {
+
+            cameraStream =
+                await navigator.mediaDevices
+                .getUserMedia({
+
+                    video: true
+
+                });
+
+
+            camera.srcObject =
+                cameraStream;
+
+
+            camera.style.display =
+                "block";
+
+
+            capturePhotoButton.disabled =
+                false;
+
+
+            startCameraButton.disabled =
+                true;
+
+
+            photoStatus.textContent =
+                "Camera started. You can capture your photo now.";
+
+        }
+
+
+        catch (error) {
+
+            console.error(
+                "Error accessing camera:",
+                error
+            );
+
+
+            photoStatus.textContent =
+                "Error accessing camera. Please check your camera permissions.";
+
+        }
+
+    }
+
+);
+
+
+
+/* =========================================
+   CAPTURE PHOTO
+========================================= */
+
+capturePhotoButton.addEventListener(
+
+    "click",
+
+    function () {
+
+
+        canvas.width =
+            camera.videoWidth;
+
+
+        canvas.height =
+            camera.videoHeight;
+
+
+        const context =
+            canvas.getContext(
+                "2d"
+            );
+
+
+        context.drawImage(
+
+            camera,
+
+            0,
+
+            0,
+
+            canvas.width,
+
+            canvas.height
+
+        );
+
+
+        const imageData =
+            canvas.toDataURL(
+                "image/jpeg"
+            );
+
+
+        preview.src =
+            imageData;
+
+
+        preview.style.display =
+            "block";
+
+
+        photoStatus.textContent =
+            "Photo captured. Uploading photo...";
+
+
+        canvas.toBlob(
+
+            async function (blob) {
+
+
+                const formData =
+                    new FormData();
+
+
+                formData.append(
+
+                    "photo",
+
+                    blob,
+
+                    "photo.jpg"
+
+                );
+
+
+                try {
+
+
+                    const response =
+                        await fetch(
+
+                            "/capture-photo",
+
+                            {
+
+                                method:
+                                    "POST",
+
+                                body:
+                                    formData
+
+                            }
+
+                        );
+
+
+                    const result =
+                        await response.json();
+
+
+                    if (
+                        result.success === true
+                    ) {
+
+
+                        photoStatus.textContent =
+                            "✓ Photo uploaded successfully.";
+
+
+                        registerButton.disabled =
+                            false;
+
+                    }
+
+
+                    else {
+
+
+                        photoStatus.textContent =
+                            "Photo upload failed: " +
+                            result.message;
+
+                    }
+
+
+                }
+
+
+                catch (error) {
+
+
+                    console.error(
+
+                        "Error uploading photo:",
+
+                        error
+
+                    );
+
+
+                    photoStatus.textContent =
+                        "Error uploading photo. Please try again.";
+
+                }
+
+            },
+
+            "image/jpeg"
+
+        );
+
+    }
+
+);
+
+</script>
+
 
 </body>
 
