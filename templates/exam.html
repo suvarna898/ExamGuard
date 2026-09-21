@@ -1090,13 +1090,15 @@
 
                 <!-- OPTIONS -->
 
+                {% set question_index = loop.index %}
+
                 {% for option in q.options %}
 
                 <label class="option">
 
                     <input
                         type="radio"
-                        name="question_{{ loop.index }}"
+                        name="question_{{ question_index }}"
                         value="{{ option }}">
 
                     <span>
@@ -1989,15 +1991,7 @@ function saveCurrentAnswer(showAlert = true) {
         currentQuestion
 
     );
-
-
-    if (showAlert) {
-
-        alert(
-            "Answer saved successfully"
-        );
-
-    }
+    
 
 
     return true;
