@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ExamGuard Examination</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: auto;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            color: #172033;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    #4f46e5 0%,
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    #7c3aed 0%,
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #111827,
+                    #312e81
+                );
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .header {
+            height: 70px;
+
+            padding: 0 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background:
+                rgba(255, 255, 255, 0.10);
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(15px);
+
+            position: sticky;
+            top: 0;
+
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: white;
+
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6
+                );
+
+            box-shadow:
+                0 5px 15px
+                rgba(99, 102, 241, 0.45);
+        }
+
+        .brand span {
+            color: #c4b5fd;
+        }
+
+        .exam-title {
+            color: #e0e7ff;
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* ================================
+           MAIN
+        ================================= */
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+
+            margin: 30px auto 60px;
+        }
+
+
+        /* ================================
+           EXAM TITLE
+        ================================= */
+
+        .exam-info-bar {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 22px;
+
+            color: white;
+        }
+
+        .exam-heading h1 {
+            font-size: 28px;
+
+            margin-bottom: 7px;
+        }
+
+        .exam-heading p {
+            color: #cbd5e1;
+
+            font-size: 14px;
+        }
+
+        .timer {
+            padding: 11px 18px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255, 255, 255, 0.12);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.18);
+
+            color: white;
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           MONITORING
+        ================================= */
+
+        .monitor-box {
+            background:
+                rgba(255, 255, 255, 0.11);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.18);
+
+            border-radius: 20px;
+
+            padding: 25px;
+
+            margin-bottom: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 45px
+                rgba(0, 0, 0, 0.20);
+        }
+
+        .monitor-title {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 20px;
+        }
+
+        .monitor-title h3 {
+            color: white;
+
+            font-size: 18px;
+        }
+
+        .live {
+            padding: 6px 12px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(34, 197, 94, 0.18);
+
+            color: #86efac;
+
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .monitor-content {
+            display: grid;
+
+            grid-template-columns:
+                1.25fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        /* ================================
+           CAMERA
+        ================================= */
+
+        .camera-container {
+            position: relative;
+        }
+
+        #camera {
+            width: 100%;
+            height: 280px;
+
+            object-fit: cover;
+
+            background: #020617;
+
+            border-radius: 15px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.20);
+
+            display: block;
+        }
+
+        .camera-live {
+            position: absolute;
+
+            top: 12px;
+            right: 12px;
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(22, 163, 74, 0.90);
+
+            color: white;
+
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           MONITORING STATUS
+        ================================= */
+
+        .status-card {
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            border-radius: 15px;
+
+            padding: 20px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.10);
+        }
+
+        .status-card h3 {
+            color: white;
+
+            font-size: 16px;
+
+            margin-bottom: 15px;
+        }
+
+        .status-row {
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255, 255, 255, 0.10);
+
+            color: #e5e7eb;
+
+            font-size: 13px;
+        }
+
+        .status-row:last-child {
+            border-bottom: none;
+        }
+
+        .status-dot {
+            width: 9px;
+            height: 9px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+                0 0 9px
+                rgba(34, 197, 94, 0.8);
+        }
+
+        .status {
+            font-weight: bold;
+
+            margin-left: auto;
+        }
+
+        #camera-status {
+            color: #fbbf24;
+        }
+
+        #face-status {
+            color: #fbbf24;
+        }
+
+        #browser-status {
+            color: #86efac;
+        }
+
+
+        /* ================================
+           QUESTIONS HEADING
+        ================================= */
+
+        .questions-heading {
+            color: white;
+
+            margin: 28px 0 15px;
+        }
+
+        .questions-heading h2 {
+            font-size: 21px;
+
+            margin-bottom: 5px;
+        }
+
+        .questions-heading p {
+            color: #cbd5e1;
+
+            font-size: 12px;
+        }
+
+
+        /* ================================
+           EXAM AREA
+        ================================= */
+
+        .exam-area {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                170px;
+
+            gap: 18px;
+
+            align-items: start;
+        }
+
+
+        /* ================================
+           QUESTION CONTAINER
+        ================================= */
+
+        .questions-container {
+            min-width: 0;
+        }
+
+
+        /* ================================
+           QUESTION CARD
+        ================================= */
+
+        .question {
+            display: none;
+
+            background:
+                rgba(255, 255, 255, 0.97);
+
+            color: #172033;
+
+            padding: 28px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 18px 40px
+                rgba(0, 0, 0, 0.22);
+        }
+
+        .question.active {
+            display: block;
+        }
+
+        .question-header {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            color: #312e81;
+
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+        .python-badge {
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            background: #ede9fe;
+
+            color: #6d28d9;
+
+            font-size: 11px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           QUESTION TEXT
+        ================================= */
+
+        .question-text {
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+
+            color: #1e293b;
+        }
+
+
+        /* ================================
+           OPTIONS
+        ================================= */
+
+        .option {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 13px 15px;
+
+            margin: 10px 0;
+
+            border:
+                1px solid
+                #dbe2ea;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            background: white;
+
+            transition: 0.2s ease;
+        }
+
+        .option:hover {
+            border-color: #6366f1;
+
+            background: #f5f3ff;
+
+            transform:
+                translateX(2px);
+        }
+
+        .option input {
+            width: 17px;
+            height: 17px;
+
+            accent-color: #6366f1;
+
+            cursor: pointer;
+        }
+
+        .option span {
+            color: #334155;
+
+            font-size: 14px;
+        }
+
+
+        /* ================================
+           QUESTION ACTIONS
+        ================================= */
+
+        .question-actions {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-top: 25px;
+        }
+
+        .left-action,
+        .right-action {
+            width: 100px;
+        }
+
+        .right-action {
+            display: flex;
+
+            justify-content: flex-end;
+        }
+
+        .nav-btn {
+            border: none;
+
+            padding: 11px 17px;
+
+            border-radius: 9px;
+
+            background: #f1f5f9;
+
+            color: #334155;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .nav-btn:hover {
+            background: #e2e8f0;
+        }
+
+        .save-btn {
+            border: none;
+
+            padding: 12px 19px;
+
+            border-radius: 9px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6
+                );
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 6px 15px
+                rgba(99, 102, 241, 0.35);
+
+            transition: 0.2s;
+        }
+
+        .save-btn:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 9px 20px
+                rgba(99, 102, 241, 0.50);
+        }
+
+
+        /* ================================
+           QUESTION LIST
+        ================================= */
+
+        .question-list {
+            background:
+                rgba(255, 255, 255, 0.97);
+
+            border-radius: 18px;
+
+            padding: 18px;
+
+            position: sticky;
+
+            top: 90px;
+
+            box-shadow:
+                0 18px 40px
+                rgba(0, 0, 0, 0.22);
+        }
+
+        .question-list h3 {
+            color: #172033;
+
+            font-size: 15px;
+
+            margin-bottom: 15px;
+        }
+
+        .question-buttons {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 9px;
+        }
+
+        .question-btn {
+            width: 100%;
+
+            height: 38px;
+
+            border-radius: 9px;
+
+            border:
+                1px solid
+                #dbe2ea;
+
+            background: white;
+
+            color: #334155;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .question-btn:hover {
+            border-color: #6366f1;
+
+            background: #f5f3ff;
+        }
+
+        .question-btn.active {
+            background:
+                linear-gradient(
+                    135deg,
+                    #6366f1,
+                    #8b5cf6
+                );
+
+            color: white;
+
+            border-color: transparent;
+
+            box-shadow:
+                0 5px 12px
+                rgba(99, 102, 241, 0.35);
+        }
+
+
+        /* ================================
+           EVENT LOG
+        ================================= */
+
+        .event-log-box {
+            margin-top: 25px;
+        }
+
+        #event-log {
+            background:
+                rgba(15, 23, 42, 0.70);
+
+            padding: 15px;
+
+            height: 160px;
+
+            overflow-y: auto;
+
+            font-size: 12px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.15);
+
+            border-radius: 11px;
+
+            color: #cbd5e1;
+
+            line-height: 1.8;
+        }
+
+        #canvas {
+            display: none;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .footer {
+            text-align: center;
+
+            color: #cbd5e1;
+
+            font-size: 11px;
+
+            margin-top: 25px;
+
+            padding-bottom: 15px;
+        }
+
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .header {
+                padding: 0 20px;
+            }
+
+            .monitor-content {
+                grid-template-columns: 1fr;
+            }
+
+            .exam-area {
+                grid-template-columns: 1fr;
+            }
+
+            .question-list {
+                position: relative;
+
+                top: 0;
+
+                order: -1;
+            }
+
+            .question-buttons {
+                grid-template-columns:
+                    repeat(5, 1fr);
+            }
+
+            .exam-info-bar {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .exam-title {
+                display: none;
+            }
+
+            .brand {
+                font-size: 19px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .question {
+                padding: 20px;
+            }
+
+            .question-actions {
+                flex-wrap: wrap;
+            }
+
+            .question-buttons {
+                grid-template-columns:
+                    repeat(5, 1fr);
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<div class="header">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🛡
+        </div>
+
+        Exam<span>Guard</span>
+
+    </div>
+
+
+    <div class="exam-title">
+        Python Assessment
+    </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     MAIN
+================================================== -->
+
+<div class="container">
+
+
+    <!-- ==================================================
+         EXAM INFORMATION
+    ================================================== -->
+
+    <div class="exam-info-bar">
+
+        <div class="exam-heading">
+
+            <h1>
+                Python Assessment
+            </h1>
+
+            <p>
+                Answer the questions carefully while monitoring is active.
+            </p>
+
+        </div>
+
+
+        <div class="timer">
+            ⏱ Examination
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         MONITORING
+    ================================================== -->
+
+    <div class="monitor-box">
+
+        <div class="monitor-title">
+
+            <h3>
+                Examination Monitoring
+            </h3>
+
+            <span class="live">
+                ● LIVE
+            </span>
+
+        </div>
+
+
+        <div class="monitor-content">
+
+
+            <!-- CAMERA -->
+
+            <div class="camera-container">
+
+                <video
+                    id="camera"
+                    autoplay
+                    playsinline>
+                </video>
+
+
+                <div class="camera-live">
+                    ● Live
+                </div>
+
+
+                <canvas id="canvas"></canvas>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="status-card">
+
+                <h3>
+                    Monitoring Status
+                </h3>
+
+
+                <div class="status-row">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Camera
+                    </span>
+
+                    <span
+                        id="camera-status"
+                        class="status">
+
+                        Starting...
+
+                    </span>
+
+                </div>
+
+
+                <div class="status-row">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Face
+                    </span>
+
+                    <span
+                        id="face-status"
+                        class="status">
+
+                        Waiting...
+
+                    </span>
+
+                </div>
+
+
+                <div class="status-row">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Browser Monitoring
+                    </span>
+
+                    <span
+                        id="browser-status"
+                        class="status">
+
+                        Active
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         QUESTIONS HEADING
+    ================================================== -->
+
+    <div class="questions-heading">
+
+        <h2>
+            Examination Questions
+        </h2>
+
+        <p>
+            Python Programming • 10 Questions
+        </p>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         EXAM AREA
+    ================================================== -->
+
+    <div class="exam-area">
+
+
+        <!-- QUESTIONS -->
+
+        <div class="questions-container">
+
+
+            {% for q in questions %}
+
+            <div
+                class="question {% if loop.first %}active{% endif %}"
+                id="question-{{ loop.index }}">
+
+
+                <div class="question-header">
+
+                    <div class="question-number">
+
+                        Question {{ loop.index }}
+                        of {{ questions|length }}
+
+                    </div>
+
+
+                    <div class="python-badge">
+
+                        🐍 Python
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="question-text">
+
+                    {{ q.question }}
+
+                </div>
+
+
+
+                <!-- OPTIONS -->
+
+                {% set question_index = loop.index %}
+
+                {% for option in q.options %}
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="question_{{ question_index }}"
+                        value="{{ option }}">
+
+                    <span>
+                        {{ option }}
+                    </span>
+
+                </label>
+
+                {% endfor %}
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="question-actions">
+
+
+                    <div class="left-action">
+
+                        {% if not loop.first %}
+
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            onclick="previousQuestion()">
+
+                            ← Previous
+
+                        </button>
+
+                        {% endif %}
+
+                    </div>
+
+
+
+                    <button
+                        type="button"
+                        class="save-btn"
+                        onclick="saveCurrentAnswer()">
+
+                        Save Answer →
+
+                    </button>
+
+
+
+                    <div class="right-action">
+
+                        {% if not loop.last %}
+
+                        <button
+                            type="button"
+                            class="nav-btn"
+                            onclick="nextQuestion()">
+
+                            Next →
+
+                        </button>
+
+                        {% endif %}
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+
+        <!-- QUESTION LIST -->
+
+        <div class="question-list">
+
+            <h3>
+                Question List
+            </h3>
+
+
+            <div class="question-buttons">
+
+
+                {% for q in questions %}
+
+                <button
+                    type="button"
+                    class="question-btn {% if loop.first %}active{% endif %}"
+                    onclick="showQuestion({{ loop.index }})">
+
+                    {{ loop.index }}
+
+                </button>
+
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         BROWSER ACTIVITY
+    ================================================== -->
+
+    <div class="monitor-box event-log-box">
+
+        <div class="monitor-title">
+
+            <h3>
+                Browser Activity
+            </h3>
+
+            <span class="live">
+                Monitoring Active
+            </span>
+
+        </div>
+
+
+        <div id="event-log">
+
+            Monitoring started...
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+
+        ExamGuard • Secure Online Examination
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   CAMERA
+===================================================== */
+
+const video =
+    document.getElementById("camera");
+
+const canvas =
+    document.getElementById("canvas");
+
+const context =
+    canvas.getContext("2d");
+
+const cameraStatus =
+    document.getElementById("camera-status");
+
+const faceStatus =
+    document.getElementById("face-status");
+
+
+navigator.mediaDevices
+    .getUserMedia({
+
+        video: true,
+        audio: false
+
+    })
+
+    .then(function(stream) {
+
+        video.srcObject = stream;
+
+        cameraStatus.innerText =
+            "Connected";
+
+        cameraStatus.style.color =
+            "#86efac";
+
+        startFaceMonitoring();
+
+    })
+
+    .catch(function(error) {
+
+        console.error(
+            "Camera error:",
+            error
+        );
+
+        cameraStatus.innerText =
+            "Camera access denied";
+
+        cameraStatus.style.color =
+            "#f87171";
+
+    });
+
+
+
+/* =====================================================
+   FACE MONITORING
+===================================================== */
+
+function startFaceMonitoring() {
+
+    setInterval(
+        captureAndSendFrame,
+        2000
+    );
+
+}
+
+
+function captureAndSendFrame() {
+
+    if (
+        video.videoWidth === 0 ||
+        video.videoHeight === 0
+    ) {
+        return;
+    }
+
+
+    canvas.width =
+        video.videoWidth;
+
+    canvas.height =
+        video.videoHeight;
+
+
+    context.drawImage(
+        video,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    canvas.toBlob(
+
+        function(blob) {
+
+            if (!blob) {
+                return;
+            }
+
+
+            const formData =
+                new FormData();
+
+
+            formData.append(
+                "image",
+                blob,
+                "frame.jpg"
+            );
+
+
+            fetch(
+                "/monitor-face",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            )
+
+            .then(function(response) {
+
+                return response.json();
+
+            })
+
+            .then(function(data) {
+
+                if (
+                    data.state ===
+                    "face_detected"
+                ) {
+
+                    faceStatus.innerText =
+                        "Face Detected";
+
+                    faceStatus.style.color =
+                        "#86efac";
+
+                }
+
+                else if (
+                    data.state ===
+                    "face_absent"
+                ) {
+
+                    faceStatus.innerText =
+                        "Face Absent";
+
+                    faceStatus.style.color =
+                        "#f87171";
+                }
+
+            })
+
+            .catch(function(error) {
+
+                console.error(
+                    "Face monitoring error:",
+                    error
+                );
+
+            });
+
+        },
+
+        "image/jpeg",
+        0.7
+
+    );
+
+}
+
+
+
+/* =====================================================
+   BROWSER EVENT LOG
+===================================================== */
+
+function logBrowserEvent(
+    eventType,
+    details
+) {
+
+    fetch(
+        "/log-browser-event",
+        {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type":
+                    "application/json"
+            },
+
+            body: JSON.stringify({
+
+                event_type:
+                    eventType,
+
+                details:
+                    details
+
+            })
+
+        }
+    )
+
+    .then(function(response) {
+
+        return response.json();
+
+    })
+
+    .catch(function(error) {
+
+        console.error(
+            "Browser event error:",
+            error
+        );
+
+    });
+
+
+    displayEvent(
+        eventType,
+        details
+    );
+
+}
+
+
+
+function displayEvent(
+    eventType,
+    details
+) {
+
+    const eventLog =
+        document.getElementById(
+            "event-log"
+        );
+
+
+    const time =
+        new Date()
+        .toLocaleTimeString();
+
+
+    const message =
+        document.createElement("div");
+
+
+    message.innerText =
+        time +
+        " - " +
+        eventType +
+        " - " +
+        details;
+
+
+    eventLog.appendChild(
+        message
+    );
+
+
+    eventLog.scrollTop =
+        eventLog.scrollHeight;
+
+}
+
+
+
+/* =====================================================
+   EXAM STARTED
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        logBrowserEvent(
+            "exam_started",
+            "Candidate opened examination page"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   TAB SWITCH
+===================================================== */
+
+document.addEventListener(
+    "visibilitychange",
+    function() {
+
+        if (document.hidden) {
+
+            logBrowserEvent(
+                "tab_switch",
+                "Candidate left examination page"
+            );
+
+        }
+
+        else {
+
+            logBrowserEvent(
+                "tab_return",
+                "Candidate returned to examination page"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   WINDOW FOCUS
+===================================================== */
+
+window.addEventListener(
+    "blur",
+    function() {
+
+        logBrowserEvent(
+            "focus_lost",
+            "Browser window lost focus"
+        );
+
+    }
+);
+
+
+window.addEventListener(
+    "focus",
+    function() {
+
+        logBrowserEvent(
+            "focus_gained",
+            "Browser window regained focus"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   COPY
+===================================================== */
+
+document.addEventListener(
+    "copy",
+    function() {
+
+        logBrowserEvent(
+            "copy_attempt",
+            "Candidate attempted to copy content"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   PASTE
+===================================================== */
+
+document.addEventListener(
+    "paste",
+    function() {
+
+        logBrowserEvent(
+            "paste_attempt",
+            "Candidate attempted to paste content"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   CUT
+===================================================== */
+
+document.addEventListener(
+    "cut",
+    function() {
+
+        logBrowserEvent(
+            "cut_attempt",
+            "Candidate attempted to cut content"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   RIGHT CLICK
+===================================================== */
+
+document.addEventListener(
+    "contextmenu",
+    function(event) {
+
+        event.preventDefault();
+
+        logBrowserEvent(
+            "right_click",
+            "Candidate attempted right click"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   KEYBOARD
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        logBrowserEvent(
+            "keyboard_activity",
+            "Candidate pressed a keyboard key"
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   MOUSE
+===================================================== */
+
+let lastMouseEventTime = 0;
+
+
+document.addEventListener(
+    "mousemove",
+    function() {
+
+        const currentTime =
+            Date.now();
+
+
+        if (
+            currentTime -
+            lastMouseEventTime >= 5000
+        ) {
+
+            lastMouseEventTime =
+                currentTime;
+
+
+            logBrowserEvent(
+                "mouse_activity",
+                "Candidate moved mouse"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   ANSWER SELECTION
+===================================================== */
+
+const answerOptions =
+    document.querySelectorAll(
+        'input[type="radio"]'
+    );
+
+
+answerOptions.forEach(
+    function(option) {
+
+        option.addEventListener(
+            "change",
+            function() {
+
+                logBrowserEvent(
+                    "answer_selected",
+                    "Candidate selected an answer"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   QUESTION NAVIGATION
+===================================================== */
+
+let currentQuestion = 1;
+
+
+const totalQuestions =
+    document.querySelectorAll(
+        ".question"
+    ).length;
+
+
+
+/* =====================================================
+   SHOW QUESTION
+   NO PAGE SCROLL
+===================================================== */
+
+function showQuestion(number) {
+
+    if (
+        number < 1 ||
+        number > totalQuestions
+    ) {
+        return;
+    }
+
+
+    /*
+       Remember the current page position.
+       This prevents the browser from moving
+       the page when question buttons are clicked.
+    */
+
+    const savedScrollPosition =
+        window.scrollY;
+
+
+    const questions =
+        document.querySelectorAll(
+            ".question"
+        );
+
+
+    /* Hide all questions */
+
+    questions.forEach(
+        function(question) {
+
+            question.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    /* Show selected question */
+
+    const selectedQuestion =
+        document.getElementById(
+            "question-" + number
+        );
+
+
+    if (selectedQuestion) {
+
+        selectedQuestion.classList.add(
+            "active"
+        );
+
+    }
+
+
+    /* Update question buttons */
+
+    const buttons =
+        document.querySelectorAll(
+            ".question-btn"
+        );
+
+
+    buttons.forEach(
+        function(button) {
+
+            button.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    if (buttons[number - 1]) {
+
+        buttons[number - 1]
+            .classList.add("active");
+
+    }
+
+
+    currentQuestion =
+        number;
+
+
+    /*
+       Remove button focus so browser
+       does not automatically scroll to it.
+    */
+
+    if (
+        document.activeElement &&
+        document.activeElement.blur
+    ) {
+
+        document.activeElement.blur();
+
+    }
+
+
+    /*
+       Restore exactly the same
+       page position.
+    */
+
+    requestAnimationFrame(
+        function() {
+
+            window.scrollTo(
+                0,
+                savedScrollPosition
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   NEXT QUESTION
+===================================================== */
+
+function nextQuestion() {
+
+    if (
+        currentQuestion <
+        totalQuestions
+    ) {
+
+        saveCurrentAnswer(false);
+
+        showQuestion(
+            currentQuestion + 1
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PREVIOUS QUESTION
+===================================================== */
+
+function previousQuestion() {
+
+    if (
+        currentQuestion > 1
+    ) {
+
+        showQuestion(
+            currentQuestion - 1
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SAVE ANSWER
+===================================================== */
+
+function saveCurrentAnswer(showAlert = true) {
+
+    const selected =
+        document.querySelector(
+            'input[name="question_' +
+            currentQuestion +
+            '"]:checked'
+        );
+
+
+    if (!selected) {
+
+        if (showAlert) {
+
+            alert(
+                "Please select an answer first."
+            );
+
+        }
+
+        return false;
+
+    }
+
+
+    logBrowserEvent(
+
+        "answer_saved",
+
+        "Candidate saved answer for Question " +
+        currentQuestion
+
+    );
+    
+
+
+    return true;
+
+}
+
+
+</script>
+
+</body>
+
+</html>
